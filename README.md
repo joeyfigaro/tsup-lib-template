@@ -1,15 +1,15 @@
-**💛 You can help the author become a full-time open-source maintainer by [sponsoring him on GitHub](https://github.com/sponsors/egoist).**
+**💛 [sponsoring me on GitHub](https://github.com/sponsors/joeyfigaro).**
 
 ---
 
-# my-ts-lib
+# Typescript Library Template
 
-[![npm version](https://badgen.net/npm/v/my-ts-lib)](https://npm.im/my-ts-lib) [![npm downloads](https://badgen.net/npm/dm/my-ts-lib)](https://npm.im/my-ts-lib)
+[![npm version](https://badgen.net/npm/v/tsup-lib-template)](https://npm.im/tsup-lib-template) [![npm downloads](https://badgen.net/npm/dm/tsup-lib-template)](https://npm.im/tsup-lib-template)
 
 ## Using this template
 
-- Search `my-ts-lib` and replace it with your custom package name.
-- Search `egoist` and replace it with your name.
+- Search `tsup-lib-template` and replace it with your custom package name.
+- Search `joeyfigaro` and replace it with your name.
 
 Features:
 
@@ -18,18 +18,21 @@ Features:
 - Bundle with [tsup](https://github.com/egoist/tsup)
 - Test with [vitest](https://vitest.dev)
 
-To skip CI (GitHub action), add `skip-ci` to commit message. To skip release, add `skip-release` to commit message.
+To skip CI, add `skip-ci` to your commit messages. To skip release, add `skip-release` to your commit messages.
 
 ## Install
 
 ```bash
-npm i my-ts-lib
+npm i tsup-lib-template
+yarn add tsup-lib-template
+pnpm add tsup-lib-template
+bun add tsup-lib-template
 ```
 
 ## Sponsors
 
-[![sponsors](https://sponsors-images.egoist.dev/sponsors.svg)](https://github.com/sponsors/egoist)
+[![sponsors](https://sponsors-images.joeyfigaro.dev/sponsors.svg)](https://github.com/sponsors/joeyfigaro)
 
 ## License
 
-MIT &copy; [EGOIST](https://github.com/sponsors/egoist)
+MIT &copy; [joeyfigaro](https://github.com/sponsors/joeyfigaro)
