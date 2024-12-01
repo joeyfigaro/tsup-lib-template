@@ -1,4 +1,4 @@
-**💛 [sponsoring me on GitHub](https://github.com/sponsors/joeyfigaro).**
+**💛 [Sponsor me](https://github.com/sponsors/joeyfigaro).**
 
 ---
 
