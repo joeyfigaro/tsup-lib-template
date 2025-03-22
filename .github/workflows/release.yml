@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches: [main, preview]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Release
+    if: github.repository_owner == 'joeyfigaro'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: joeyfigaro/pnpm-config/.github/workflows/pnpm@main
+
+      - name: Run Tests
+        run: pnpm run test:ci
+
+      - name: Run Changesets (version or publish)
+        uses: changesets/action@v1.4.10
+        with:
+          version: pnpm run version
+          publish: pnpm run publish
+          commit: 'ci: version'
+          title: 'ci: version'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

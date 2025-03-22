@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Requests & Questions
+    url: https://github.com/joeyfigaro/tsup-lib-template/discussions
+    about: Q&A and feature requests here, please
+  - name: Community Chat
+    url: https://discord.gg/...
+    about: A dedicated discord server
