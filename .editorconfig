@@ -1,0 +1,15 @@
+# EditorConfig works out of the box with many editors, plugins are available
+# for many others - see the website:
+# https://EditorConfig.org
+
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.{md,mdx,html,mjml}]
+trim_trailing_whitespace = false

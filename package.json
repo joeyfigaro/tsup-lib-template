@@ -28,23 +28,26 @@
     "typecheck": "pnpm tsup --dts-only",
     "test": "NODE_ENV=test pnpm vitest --ui --mode development",
     "test:ci": "pnpm vitest run --coverage",
-    "test:watch": "pnpm vitest --watch"
+    "test:watch": "pnpm vitest --watch",
+    "release": "pnpm run build && pnpm changesets version && pnpm changesets publish"
   },
   "license": "MIT",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "dependencies": {},
   "devDependencies": {
-    "@testing-library/react": "*",
+    "@testing-library/react": "latest",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vitest/coverage-v8": "*",
-    "@vitest/ui": "*",
-    "eslint": "*",
-    "prettier": "*",
+    "@vitest/coverage-v8": "latest",
+    "eslint": "v9.*",
+    "prettier": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tsup": "^8.3.5",
-    "typescript": "*",
-    "vitest": "*"
+    "typescript": "latest",
+    "vitest": "latest"
   }
 }
