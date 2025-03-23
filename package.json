@@ -39,13 +39,13 @@
   "devDependencies": {
     "@changesets/cli": "^2.28.1",
     "@testing-library/react": "latest",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitest/coverage-v8": "latest",
     "eslint": "v9.*",
     "prettier": "latest",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tsup": "^8.3.5",
     "typescript": "latest",
     "vitest": "latest"
