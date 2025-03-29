@@ -41,6 +41,7 @@
     "@testing-library/react": "latest",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@vitest/coverage-v8": "latest",
     "eslint": "v9.*",
     "eslint-config-prettier": "^10.1.1",
