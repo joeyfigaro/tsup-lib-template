@@ -29,7 +29,7 @@
     "test": "NODE_ENV=test pnpm vitest --ui --mode development",
     "test:ci": "pnpm vitest run --coverage",
     "test:watch": "pnpm vitest --watch",
-    "release": "pnpm run build && pnpm changesets version && pnpm changesets publish"
+    "release": "pnpm run build && pnpm changeset version && pnpm changeset publish"
   },
   "license": "MIT",
   "peerDependencies": {
