@@ -29,7 +29,7 @@
     "test": "NODE_ENV=test pnpm vitest --ui --mode development",
     "test:ci": "pnpm vitest run --coverage",
     "test:watch": "pnpm vitest --watch",
-    "release": "pnpm run build && pnpm changeset version && pnpm changeset publish"
+    "release": "pnpm run build"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -37,8 +37,6 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@changesets/changelog-git": "^0.2.1",
-    "@changesets/cli": "^2.28.1",
     "@testing-library/react": "latest",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
