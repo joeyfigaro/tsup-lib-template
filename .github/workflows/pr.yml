@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   setup:
-    uses: joeyfigaro/pnpm-config/.github/workflows/pnpm@main
+    uses: joeyfigaro/pnpm-config/.github/workflows/setup.yaml@main
 
   test:
     name: Tests
