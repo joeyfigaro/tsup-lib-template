@@ -30,10 +30,10 @@ importers:
         specifier: latest
         version: 16.2.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.5(@types/react@18.3.19))(@types/react@18.3.19)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18.3.19
         version: 18.3.19
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18.3.5
         version: 18.3.5(@types/react@18.3.19)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.28.0
@@ -42,7 +42,7 @@ importers:
         specifier: latest
         version: 3.0.9(vitest@3.0.9)
       eslint:
-        specifier: v9.*
+        specifier: ~9.23.0
         version: 9.23.0
       eslint-config-prettier:
         specifier: ^10.1.1
@@ -54,16 +54,16 @@ importers:
         specifier: latest
         version: 3.5.3
       react:
-        specifier: ^18.0.0
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.0.0
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       semantic-release:
         specifier: ^24.2.3
         version: 24.2.3(typescript@5.8.2)
       tsup:
-        specifier: ^8.3.5
+        specifier: ^8.4.0
         version: 8.4.0(postcss@8.4.49)(typescript@5.8.2)
       typescript:
         specifier: latest
