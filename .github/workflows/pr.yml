@@ -18,7 +18,7 @@ jobs:
   setup:
     uses: joeyfigaro/pnpm-config/.github/workflows/setup.yaml@main
     with:
-      enable_build: false
+      pnpm_version: 10.7.0
     secrets:
       GITHUB_CI_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
