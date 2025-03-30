@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [main, preview]
+    branches: [main, beta]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -27,14 +27,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup
-        uses: joeyfigaro/pnpm-config/.github/workflows/pnpm@main
-
-      - name: Run Tests
-        run: pnpm run test:ci
+      - uses: joeyfigaro/workflows/.github/workflows/pnpm-setup.yaml@main
+        with:
+          pnpm_version: 10.7.0
+          node_version: 22.11.0
+          run_tests: true
+          run_checkout: false
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: pnpm semantic-release
