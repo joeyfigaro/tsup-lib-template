@@ -21,8 +21,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "pnpm tsup --watch",
-    "bundle": "pnpm run build",
-    "build": "pnpm tsup src/index.ts --format esm,cjs --dts --minify",
+    "build": "pnpm tsup src/index.ts --format esm --dts --minify",
+    "lint": "pnpm eslint . --cache",
     "lint:fix": "pnpm eslint . --fix",
     "format:fix": "pnpm prettier . --write",
     "typecheck": "pnpm tsup --dts-only",
