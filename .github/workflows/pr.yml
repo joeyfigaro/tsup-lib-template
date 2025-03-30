@@ -23,6 +23,7 @@ jobs:
       GITHUB_CI_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
+    needs: setup
     name: Tests
     runs-on: ubuntu-latest
     steps:
