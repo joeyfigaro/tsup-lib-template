@@ -1,23 +1,26 @@
 name: Pull Request
 
 on:
-  workflow_call:
   pull_request:
     branches: main
     types:
       - opened
       - synchronize
 
-# concurrency:
-#   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-#   cancel-in-progress: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
 
-# permissions:
-#   contents: read
+permissions:
+  contents: read
 
 jobs:
   setup:
     uses: joeyfigaro/pnpm-config/.github/workflows/setup.yaml@main
+    with:
+      enable_build: false
+    secrets:
+      GITHUB_CI_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
     name: Tests
@@ -26,13 +29,3 @@ jobs:
       - name: Test:CI
         run: pnpm run test:ci
 
-# jobs:
-#   setup:
-#     uses: joeyfigaro/pnpm-config/.github/workflows/setup.yaml@main
-
-#   test:
-#     name: Tests
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Test:CI
-#         run: pnpm run test:ci
