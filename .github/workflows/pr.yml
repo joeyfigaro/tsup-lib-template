@@ -2,6 +2,10 @@ name: Pull Request
 
 on:
   pull_request:
+    branches: main
+    types:
+      - opened
+      - synchronize
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
@@ -11,17 +15,12 @@ permissions:
   contents: read
 
 jobs:
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
-        with:
-          fetch-depth: 0
+  setup:
+    uses: joeyfigaro/workflows/.github/workflows/pnpm-setup.yaml@main
+    with:
+      pnpm_version: 10.7.0
+      node_version: 22.11.0
+      run_tests: true
+    secrets:
+      GITHUB_CI_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup
-        uses: joeyfigaro/pnpm-config/.github/workflows/pnpm@main
-
-      - name: Test
-        run: pnpm run test:ci

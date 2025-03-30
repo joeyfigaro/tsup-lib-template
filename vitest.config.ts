@@ -9,7 +9,7 @@ export default defineConfig({
       provider: 'v8',
       reportsDirectory: './.coverage',
     },
-    setupFiles: ['./test/setup.ts'],
+    setupFiles: ['./src/__test__/setup.ts'],
     include: ['**/*.spec.{ts,tsx}'],
   },
 });

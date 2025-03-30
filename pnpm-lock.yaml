@@ -30,10 +30,10 @@ importers:
         specifier: latest
         version: 16.2.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.5(@types/react@18.3.19))(@types/react@18.3.19)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18.3.19
         version: 18.3.19
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18.3.5
         version: 18.3.5(@types/react@18.3.19)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.28.0
@@ -42,7 +42,7 @@ importers:
         specifier: latest
         version: 3.0.9(vitest@3.0.9)
       eslint:
-        specifier: v9.*
+        specifier: ~9.23.0
         version: 9.23.0
       eslint-config-prettier:
         specifier: ^10.1.1
@@ -50,27 +50,30 @@ importers:
       eslint-plugin-import:
         specifier: ^2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.28.0(eslint@9.23.0)(typescript@5.8.2))(eslint@9.23.0)
+      happy-dom:
+        specifier: ^17.4.4
+        version: 17.4.4
       prettier:
         specifier: latest
         version: 3.5.3
       react:
-        specifier: ^18.0.0
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.0.0
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       semantic-release:
         specifier: ^24.2.3
         version: 24.2.3(typescript@5.8.2)
       tsup:
-        specifier: ^8.3.5
+        specifier: ^8.4.0
         version: 8.4.0(postcss@8.4.49)(typescript@5.8.2)
       typescript:
         specifier: latest
         version: 5.8.2
       vitest:
         specifier: latest
-        version: 3.0.9(@vitest/ui@3.0.9)
+        version: 3.0.9(@vitest/ui@3.0.9)(happy-dom@17.4.4)
 
 packages:
 
@@ -1681,6 +1684,10 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
+  happy-dom@17.4.4:
+    resolution: {integrity: sha512-/Pb0ctk3HTZ5xEL3BZ0hK1AqDSAUuRQitOmROPHhfUYEWpmTImwfD8vFDGADmMAX0JYgbcgxWoLFKtsWhcpuVA==}
+    engines: {node: '>=18.0.0'}
+
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
     engines: {node: '>= 0.4'}
@@ -3049,6 +3056,14 @@ packages:
   webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
 
+  webidl-conversions@7.0.0:
+    resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
+    engines: {node: '>=12'}
+
+  whatwg-mimetype@3.0.0:
+    resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
+    engines: {node: '>=12'}
+
   whatwg-url@7.1.0:
     resolution: {integrity: sha512-WUu7Rg1DroM7oQvGWfOiAK21n74Gg+T4elXEQYkOhtyLeWiJFoOGLXPKI/9gzIie9CtwVLm8wtw6YJdKyxSjeg==}
 
@@ -3845,7 +3860,7 @@ snapshots:
       std-env: 3.8.0
       test-exclude: 7.0.1
       tinyrainbow: 2.0.0
-      vitest: 3.0.9(@vitest/ui@3.0.9)
+      vitest: 3.0.9(@vitest/ui@3.0.9)(happy-dom@17.4.4)
     transitivePeerDependencies:
       - supports-color
 
@@ -3892,7 +3907,7 @@ snapshots:
       sirv: 3.0.1
       tinyglobby: 0.2.12
       tinyrainbow: 2.0.0
-      vitest: 3.0.9(@vitest/ui@3.0.9)
+      vitest: 3.0.9(@vitest/ui@3.0.9)(happy-dom@17.4.4)
     optional: true
 
   '@vitest/utils@3.0.9':
@@ -4788,6 +4803,11 @@ snapshots:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.19.3
+
+  happy-dom@17.4.4:
+    dependencies:
+      webidl-conversions: 7.0.0
+      whatwg-mimetype: 3.0.0
 
   has-bigints@1.1.0: {}
 
@@ -6073,7 +6093,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitest@3.0.9(@vitest/ui@3.0.9):
+  vitest@3.0.9(@vitest/ui@3.0.9)(happy-dom@17.4.4):
     dependencies:
       '@vitest/expect': 3.0.9
       '@vitest/mocker': 3.0.9(vite@6.0.1)
@@ -6097,6 +6117,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@vitest/ui': 3.0.9(vitest@3.0.9)
+      happy-dom: 17.4.4
     transitivePeerDependencies:
       - jiti
       - less
@@ -6112,6 +6133,10 @@ snapshots:
       - yaml
 
   webidl-conversions@4.0.2: {}
+
+  webidl-conversions@7.0.0: {}
+
+  whatwg-mimetype@3.0.0: {}
 
   whatwg-url@7.1.0:
     dependencies:
