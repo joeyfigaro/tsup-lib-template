@@ -3,7 +3,7 @@ node_modules
 dist
 *.log
 
+## shhh
 .envrc
-.env
 .env*
-!.envrc.example
+!.env.example
