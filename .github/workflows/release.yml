@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [main, beta]
+    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -18,21 +18,41 @@ permissions:
 
 jobs:
   release:
-    name: Release
-    if: github.repository_owner == 'joeyfigaro'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@main
         with:
           fetch-depth: 0
 
-      - uses: joeyfigaro/workflows/.github/workflows/pnpm-setup.yaml@main
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.1.0
         with:
-          pnpm_version: 10.7.0
-          node_version: 22.11.0
-          run_tests: true
-          run_checkout: false
+          version: 10.7.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: .nvmrc
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4.2.3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile
+
+      - name: Execute Tests
+        run: pnpm run test:ci
 
       - name: Release
         env:
