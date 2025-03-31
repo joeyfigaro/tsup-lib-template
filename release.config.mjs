@@ -6,12 +6,6 @@ export default {
   ],
   plugins: [
     [
-      '@semantic-release/npm',
-      {
-        tarballDir: 'release',
-      },
-    ],
-    [
       '@semantic-release/github',
       {
         assets: 'release/*.tgz',
