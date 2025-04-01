@@ -1,7 +1,3 @@
-**💛 [Sponsor me](https://github.com/sponsors/joeyfigaro).**
-
----
-
 # Typescript Library Template
 
 [![npm version](https://badgen.net/npm/v/tsup-lib-template)](https://npm.im/tsup-lib-template) [![npm downloads](https://badgen.net/npm/dm/tsup-lib-template)](https://npm.im/tsup-lib-template)
@@ -28,10 +24,6 @@ yarn add tsup-lib-template
 pnpm add tsup-lib-template
 bun add tsup-lib-template
 ```
-
-## Sponsors
-
-[![sponsors](https://sponsors-images.joeyfigaro.dev/sponsors.svg)](https://github.com/sponsors/joeyfigaro)
 
 ## License
 
