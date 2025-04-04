@@ -50,7 +50,7 @@
     "@types/react-dom": "^18.3.5",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@vitest/coverage-v8": "latest",
-    "eslint": "~9.23.0",
+    "eslint": "~9.24.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.31.0",
     "happy-dom": "^17.4.4",
